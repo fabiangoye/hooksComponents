@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import { useEffect, useState } from 'react';
 import { RecibirProps } from './RecibirProps';
 
-export default function (PrimerComponente) {
+export default function PrimerComponente({handleResult})  {
 
     /*****ESTADOS******/
     //creando el estado. el primer hook
@@ -36,6 +36,8 @@ export default function (PrimerComponente) {
         e.preventDefault();
         if(!(num1 === "") && !(num2 ==="")){
             setResult(parseInt(num1) + parseInt(num2));
+       <br/>
+            handleResult(parseInt(num1) + parseInt(num2))
         }else{
             console.log("faltan campos");
         }
