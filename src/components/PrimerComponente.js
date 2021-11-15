@@ -12,6 +12,10 @@ export default function (PrimerComponente) {
     //función expresada
     const handlerNum1 = (e) =>  setNum1(e.target.value);// esto talvez de se puede hacer como en el PersonForm.js del proyecto clase_react_1 línea 70 (handlerValue())
     const handlerNum2 = (e) =>  setNum2(e.target.value);
+
+    const suma = (num1, num2) => {
+        return(num1 + num2);
+    }
     
     
     return (
