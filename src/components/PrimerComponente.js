@@ -4,17 +4,28 @@ import { useState } from 'react';
 
 export default function (PrimerComponente) {
 
+    /*****ESTADOS******/
     //creando el estado. el primer hook
-    const [num1, setNum1] = useState(undefined);//[] usa dos variables, 1ro quien almacena el estado y 2do quien setea el estado. en useState()se coloca el valor con el q se va inicializar el estado
-    const [num2, setNum2] = useState(undefined);
+    const [num1, setNum1] = useState("");//[] usa dos variables, 1ro quien almacena el estado y 2do quien setea el estado. en useState()se coloca el valor con el q se va inicializar el estado
+    const [num2, setNum2] = useState("");
+    const [result, setResult] = useState("");
 
     
     //función expresada
     const handlerNum1 = (e) =>  setNum1(e.target.value);// esto talvez de se puede hacer como en el PersonForm.js del proyecto clase_react_1 línea 70 (handlerValue())
     const handlerNum2 = (e) =>  setNum2(e.target.value);
 
-    const suma = (num1, num2) => {
+    /* LA MIA const suma = (num1, num2) => {
         return(num1 + num2);
+    }*/
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if(!(num1 === "") && !(num2 ==="")){
+            setResult(parseInt(num1) + parseInt(num2));
+        }else{
+            console.log("faltan campos");
+        }
     }
     
     
@@ -22,7 +33,7 @@ export default function (PrimerComponente) {
         <>
             <h1>Mi primer Componente con hooks</h1>
             {/*formulario calculadora */}
-            <Form>
+            <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formNum1">
                     <Form.Control  value = {num1} type="number" onChange= {handlerNum1} placeholder="Ingrese el primer número" />
                    
@@ -37,6 +48,10 @@ export default function (PrimerComponente) {
                     Sumar
                 </Button>
             </Form>
+
+            <span>
+               Resultado : {result} 
+            </span>
         </>
     )
 }
