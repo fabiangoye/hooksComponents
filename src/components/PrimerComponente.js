@@ -1,6 +1,7 @@
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { RecibirProps } from './RecibirProps';
 
 export default function (PrimerComponente) {
 
@@ -14,6 +15,18 @@ export default function (PrimerComponente) {
     //función expresada
     const handlerNum1 = (e) =>  setNum1(e.target.value);// esto talvez de se puede hacer como en el PersonForm.js del proyecto clase_react_1 línea 70 (handlerValue())
     const handlerNum2 = (e) =>  setNum2(e.target.value);
+
+    //punto de montaje
+    useEffect(() => {// esto es un hook de punto de montaje. se emvian dos parametros 1. una función flecha de lo que se va a ejecutar. 2. un arreglo vacio
+
+        console.log("creación de componente");
+
+    }, []);
+
+
+    useEffect(()=>{
+        console.log("Actualizando el segundo input");
+    }, [num2]);// al parecer el segundo parámetro debe ser un arreglo. siempre?
 
     /* LA MIA const suma = (num1, num2) => {
         return(num1 + num2);
@@ -48,10 +61,9 @@ export default function (PrimerComponente) {
                     Sumar
                 </Button>
             </Form>
-
-            <span>
-               Resultado : {result} 
-            </span>
+            {/*{!(result === "") ? (<span> Resultado: {result} </span>) :(<></>)}{/* if - else. Resultado mostrandolo localmente*/}
+            {/*}{!(result === "") ? (<RecibirProps result = {result}/>) : (<></>)}{*/}
+            
         </>
     )
 }
