@@ -16,7 +16,7 @@ function App() {
 
         <Routes>
           <Route path="/" element = {<Login/>}></Route>
-          <Route path="/dashboard" element = {<Dashboard/>}></Route>
+          <Route path="/dashboard" element = {<Dashboard autorizado={false}/>}></Route>
         </Routes>
         
         {/*}<RecibirProps mensaje="Hola mundo desde App.js" numero="10"/>{*/}
