@@ -35,9 +35,9 @@ export default function PrimerComponente({handleResult})  {
     const handleSubmit = (e) => {
         e.preventDefault();
         if(!(num1 === "") && !(num2 ==="")){
-            setResult(parseInt(num1) + parseInt(num2));
+            //setResult(parseInt(num1) + parseInt(num2));
        <br/>
-            handleResult(parseInt(num1) + parseInt(num2))
+            handleResult(parseInt(num1) + parseInt(num2));
         }else{
             console.log("faltan campos");
         }
