@@ -1,27 +1,19 @@
 //import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';// este es el import que se debe poner. Está en el Getting started/ bloque CSS
+import { useContext } from 'react';
+import AuthContext from './context/AuthContext';
+import AuthRouter from './Routes/AuthRouter';
+import UnauthRouter from './Routes/UnauthRouter';
 
-import Login from './components/login';
-import { Route, Routes } from 'react-router';
-import Dashboard from './components/Dashboard';
 
 function App() {
 
- 
+  const {auth} = useContext(AuthContext); // ese const {auth} = es una desestructuración
 
   return (
     <div className="App">
-      <header className="App-header">
-
-        <Routes>
-          <Route path="/" element = {<Login/>}></Route>
-          <Route path="/dashboard" element = {<Dashboard autorizado={false}/>}></Route>
-        </Routes>
-        
-        {/*}<RecibirProps mensaje="Hola mundo desde App.js" numero="10"/>{*/}
-       
-      </header>
+      { auth? <AuthRouter/>: <UnauthRouter/>}
     </div>
   );
 }
