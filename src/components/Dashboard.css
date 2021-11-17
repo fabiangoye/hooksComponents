@@ -1,0 +1,11 @@
+.letra{
+    color:white;
+    opacity: 50%;
+    padding-top: 2%;
+    text-decoration: none;
+}
+
+.letra:hover{
+    color: white;
+    opacity: 100%;
+}

@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import { useEffect, useState } from 'react';
 import { RecibirProps } from './RecibirProps';
 
-export default function PrimerComponente({handleResult})  {
+export default function PrimerComponente()  {
 
     /*****ESTADOS******/
     //creando el estado. el primer hook
@@ -35,9 +35,9 @@ export default function PrimerComponente({handleResult})  {
     const handleSubmit = (e) => {
         e.preventDefault();
         if(!(num1 === "") && !(num2 ==="")){
-            //setResult(parseInt(num1) + parseInt(num2));
+            setResult(parseInt(num1) + parseInt(num2));
        <br/>
-            handleResult(parseInt(num1) + parseInt(num2));
+            //handleResult(parseInt(num1) + parseInt(num2));
         }else{
             console.log("faltan campos");
         }
@@ -63,7 +63,8 @@ export default function PrimerComponente({handleResult})  {
                     Sumar
                 </Button>
             </Form>
-            {/*{!(result === "") ? (<span> Resultado: {result} </span>) :(<></>)}{/* if - else. Resultado mostrandolo localmente*/}
+            {!(result === "") ? (<span> Resultado: {result} </span>) :(<></>)}{/* if - else. Resultado mostrandolo localmente*/}
+            
             {/*}{!(result === "") ? (<RecibirProps result = {result}/>) : (<></>)}{*/}
             
         </>
