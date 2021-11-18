@@ -20,10 +20,10 @@ const Dashboard = () => {
                         <Navbar.Brand href="#home">Navbar</Navbar.Brand>
                         <Nav className="me-auto">
                             
-                                <Link className="letra" to ="primercomponente">Primer Componente</Link>
+                                {/*}<Link className="letra" to ="primercomponente">Primer Componente</Link>{*/}
                             
 
-                            <Nav.Link href="#home">componente</Nav.Link>
+                            <Nav.Link  as={Link} to="primercomponente" >componente</Nav.Link>
                             <Nav.Link href="#features">Features</Nav.Link>
                             <Nav.Link href="#pricing">Pricing</Nav.Link>
                         </Nav>

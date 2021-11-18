@@ -7,7 +7,7 @@ const AuthRouter = () => {
         <>
            <Routes>
                <Route path="/" element= {<Dashboard/>}>
-                    <Route path="primercomponente" element= {<PrimerComponente/>}/>
+                    <Route index element= {<PrimerComponente/>}/>
                </Route>
               
                
